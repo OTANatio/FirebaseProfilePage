@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <link rel="stylesheet" href="css/font_awesome/css/font-awesome.css">
+</head>
+<body>
+    <div id="app">
+        
+    <!--CREATE CUSTOM TOAST-->
+    <div id="toast">
+            <i onclick="removeToast()" class="fas fa-window-close"></i>
+            <p id="toastMessage">
+                text here
+            </p>
+        </div>
+        <!--APP STARTS HERE-->
+        <div id="icons">
+            <i id="day" class="fas fa-sun fa-2x fa-fw"></i>
+            <i id="night" class="fas fa-moon fa-2x fa-fw"></i>
+        </div>
+        <div id="register">
+        <div id="app_area">
+            <h2>Sign up</h2>
+            <input type="text" name="" id="reg_email" placeholder="Email">
+            <input type="password" name="" id="reg_password" placeholder="Password">
+            <button onclick="createUser()">Sign up</button>
+            <p onclick="openLoginPage()">Have an account, Sign in</p>
+        </div>
+        </div>
+        <!--Complete your profile-->
+        <div id="completeProfile">
+            <div id="app_area">
+                <div id="userEmailComplete"></div>
+                <h2>Complete your profile</h2>
+                <input type="file" name="" id="uploadFile">
+                <input type="text" name="" id="name" placeholder="Name">
+                <input type="text" name="" id="phone" placeholder="Phone Number">
+                <input type="text" name="" id="address" placeholder="Address">
+                <button onclick="updateProfile()">Update profile</button>
+            </div>
+        </div>
+        <!--PROFILE PAGE-->
+        <div id="profilePage">
+            <div id="app_area">
+                <div id="userEmailProfile"></div>
+                <img id="showProfilePic" width="100px;">
+                <ul id="showUserInfo">
+                    <!--
+                        <li></li>
+                    -->
+                </ul>
+                <button onclick="setUpProfilePage()" style="margin-bottom:0px; margin-top: 32px">Setup Profile</button>
+                <button onclick="signOut()">Logout</button>
+            </div>
+        </div>
+        <!--LOGIN FORM-->
+        <div id="login">
+            <div id="app_area">
+                <h2>Login</h2>
+                <input type="text" name="" id="login_email" placeholder="Email">
+                <input type="password" name="" id="login_pass" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <P onclick="openRegPage()">New here? Sign up</P>
+            </div>
+        </div>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAzI-Eq57S7i1oZFKPgZuvn8A8CHHgWZQ4",
+    authDomain: "testapp-36d42.firebaseapp.com",
+    databaseURL: "https://testapp-36d42.firebaseio.com",
+    projectId: "testapp-36d42",
+    storageBucket: "testapp-36d42.appspot.com",
+    messagingSenderId: "1088806177227"
+  };
+  firebase.initializeApp(config);
+</script>
+   <script src="js/main.js"></script>
+   <script src="js/database.js"></script>
+</body>
+</html>
